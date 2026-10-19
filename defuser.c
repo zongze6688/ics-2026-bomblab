@@ -265,7 +265,7 @@ int solve_secret(uint64_t challenge, uint64_t context, char *out, size_t cap) {
     rsi = rsi >> 7;
     values[2] = (0xaec6 + r8 + values[0] + rsi) ^ values[1];
 
-    int n = snprintf(
+    snprintf(
         out, cap,
         "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOPEN "
         "%" PRIu32 " %" PRIu32 " %" PRIu32,
