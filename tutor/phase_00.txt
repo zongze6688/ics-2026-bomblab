@@ -1,0 +1,60 @@
+
+./bomb:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .text:
+
+0000000000401460 <phase_00>:
+  401460:	f3 0f 1e fa          	endbr64
+  401464:	55                   	push   %rbp
+  401465:	48 89 e5             	mov    %rsp,%rbp
+  401468:	41 54                	push   %r12
+  40146a:	49 89 fc             	mov    %rdi,%r12
+  40146d:	53                   	push   %rbx
+  40146e:	48 89 f3             	mov    %rsi,%rbx
+  401471:	be 02 00 00 00       	mov    $0x2,%esi
+  401476:	48 83 ec 10          	sub    $0x10,%rsp
+  40147a:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  401481:	00 00 
+  401483:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  401487:	31 c0                	xor    %eax,%eax
+  401489:	e8 62 00 00 00       	call   4014f0 <valid_u32_fields>
+  40148e:	84 c0                	test   %al,%al
+  401490:	75 1e                	jne    4014b0 <phase_00+0x50>
+  401492:	31 c0                	xor    %eax,%eax
+  401494:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  401498:	64 48 2b 14 25 28 00 	sub    %fs:0x28,%rdx
+  40149f:	00 00 
+  4014a1:	75 45                	jne    4014e8 <phase_00+0x88>
+  4014a3:	48 83 c4 10          	add    $0x10,%rsp
+  4014a7:	5b                   	pop    %rbx
+  4014a8:	41 5c                	pop    %r12
+  4014aa:	5d                   	pop    %rbp
+  4014ab:	c3                   	ret
+  4014ac:	0f 1f 40 00          	nopl   0x0(%rax)
+  4014b0:	31 c0                	xor    %eax,%eax
+  4014b2:	48 8d 4d e4          	lea    -0x1c(%rbp),%rcx
+  4014b6:	48 8d 55 e0          	lea    -0x20(%rbp),%rdx
+  4014ba:	be 41 20 40 00       	mov    $0x402041,%esi
+  4014bf:	4c 89 e7             	mov    %r12,%rdi
+  4014c2:	e8 89 fc ff ff       	call   401150 <__isoc99_sscanf@plt>
+  4014c7:	83 f8 02             	cmp    $0x2,%eax
+  4014ca:	75 c6                	jne    401492 <phase_00+0x32>
+  4014cc:	48 c1 eb 05          	shr    $0x5,%rbx
+  4014d0:	0f b6 fb             	movzbl %bl,%edi
+  4014d3:	83 f7 2a             	xor    $0x2a,%edi
+  4014d6:	39 7d e0             	cmp    %edi,-0x20(%rbp)
+  4014d9:	75 b7                	jne    401492 <phase_00+0x32>
+  4014db:	e8 70 ff ff ff       	call   401450 <tutorial_mix>
+  4014e0:	39 45 e4             	cmp    %eax,-0x1c(%rbp)
+  4014e3:	0f 94 c0             	sete   %al
+  4014e6:	eb ac                	jmp    401494 <phase_00+0x34>
+  4014e8:	e8 33 fc ff ff       	call   401120 <__stack_chk_fail@plt>
+
+Disassembly of section .fini:

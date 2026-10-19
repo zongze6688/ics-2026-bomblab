@@ -1,0 +1,18 @@
+
+./bomb:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.sec:
+
+Disassembly of section .text:
+
+0000000000401450 <tutorial_mix>:
+  401450:	f3 0f 1e fa          	endbr64
+  401454:	8d 44 7f 07          	lea    0x7(%rdi,%rdi,2),%eax
+  401458:	c3                   	ret
+
+Disassembly of section .fini:
